@@ -1,39 +1,58 @@
+# 🍎 Menu Bar Utility — macOS SwiftUI
 
-# 🚀 Getting Started
+A macOS app demonstrating how to build a persistent menu bar utility using SwiftUI's `MenuBarExtra` API — with a popover window showing live stats and interactive controls.
 
-## 1. Clone the Repo
+---
+
+## 🤔 What this is
+
+This project shows how to create a macOS menu bar app that lives in the system menu bar — no Dock icon required. It uses the modern `MenuBarExtra` API (macOS 13+) to display a popover panel with a progress indicator and button, running alongside a standard main window in the same app.
+
+## ✅ Why you'd use it
+
+- **`MenuBarExtra` with `.window` style** — the modern SwiftUI way to build menu bar apps (no `NSStatusItem` boilerplate)
+- **Dual-scene setup** — `WindowGroup` and `MenuBarExtra` running side by side in one `App`
+- **Interactive popover** — `ProgressView` and action buttons inside the menu bar window
+- **~20 lines of SwiftUI** — the entire menu bar scene is minimal and easy to extend
+- **Ready-to-extend template** — swap in clipboard tools, timers, quick-launchers, etc.
+
+## 📺 Watch on YouTube
+
+[![Watch on YouTube](https://img.shields.io/badge/YouTube-Watch%20the%20Tutorial-red?style=for-the-badge&logo=youtube)](https://youtu.be/DV1AcsYGQok)
+
+> This project was built for the [NoahDoesCoding YouTube channel](https://www.youtube.com/@NoahDoesCoding97).
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repo
 ```bash
-git clone https://github.com/NDCSwift/REPO-NAME.git
-cd REPO-NAME
+git clone https://github.com/NDCSwift/MenuBarUtilityMacOS.git
+cd MenuBarUtilityMacOS
 ```
-Or select “Clone Git Repository…” when Xcode launches.
 
-⸻
+### 2. Open in Xcode
+Double-click `MenuBarUtilityMacOS.xcodeproj`.
 
-## 2. Open in Xcode
-	•	Double-click the .xcodeproj or .xcworkspace.
-
-⸻
-
-## 3. Set Your Development Team
-
-In Xcode, navigate to:
-
+### 3. Set Your Development Team
 TARGET → Signing & Capabilities → Team
-	
-    •	Select your personal or organizational team.
 
-⸻
+### 4. Update the Bundle Identifier
+Change `com.example.MyApp` to a unique identifier.
 
-## 4. Update the Bundle Identifier
-	•	Change com.example.MyApp to a unique identifier (e.g., com.yourname.MyApp).
+### 5. Run
+Build and run — look for the ⚡ bolt icon in your macOS menu bar.
 
-⸻
+---
 
-🛠️ Notes
+## 🛠️ Notes
+- `MenuBarExtra` requires macOS 13+.
+- To hide the Dock icon, add `LSUIElement = YES` to `Info.plist`.
+- Use `.menuBarExtraStyle(.menu)` for a traditional dropdown instead of a panel.
 
-	•	If you see a code signing error, check that Team and Bundle ID are set.
-	•	If building for a device, ensure your provisioning profile supports the required capabilities (Push, iCloud, etc.).
+## 📦 Requirements
+- Xcode 16+
+- macOS 13+
 
-📺 YouTube
-[Click here to check out the guide on YouTube](https://youtu.be/DV1AcsYGQok)
+📺 [Watch the guide on YouTube](https://youtu.be/DV1AcsYGQok)
